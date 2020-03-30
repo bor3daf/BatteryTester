@@ -8,7 +8,7 @@ int ledRED = 5;
 int ledGREEN = 6;
 int ledBLUE = 7;
 
-//Only used for youtube demo. These libraries were required to run my I2C screen.
+//Only used for youtube demo. Adafruit libraries required to run I2C screen.
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
