@@ -1,7 +1,14 @@
+/*
+Nick Sola
+Eltrn-271 Intro to Robotics
+Project 1 - Battery Tester
+*/
+
 int ledRED = 5;
 int ledGREEN = 6;
 int ledBLUE = 7;
 
+//Only used for youtube demo. These libraries were required to run my I2C screen.
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -36,13 +43,14 @@ void setup() {
 }
 
 void loop () {
+  //Standby mode
 if ((analogRead(A2) < 21)) {
     digitalWrite(ledGREEN,LOW);
     digitalWrite(ledBLUE,HIGH);
     digitalWrite(ledRED,LOW);
     
    }
- 
+   //Dead battery mode
  if ((analogRead(A2) < 320)&& (analogRead(A2) > 20)) {
     digitalWrite(ledGREEN,LOW);
     digitalWrite(ledBLUE,LOW);
@@ -52,6 +60,7 @@ if ((analogRead(A2) < 21)) {
     delay(500);
     
    }
+   //Good battery mode
  if ((analogRead(A2) > 319) && (analogRead(A2) < 380)) {
     digitalWrite(ledGREEN,HIGH);
     digitalWrite(ledBLUE,LOW);
@@ -61,6 +70,7 @@ if ((analogRead(A2) < 21)) {
     delay(500);
     
   }
+  //Error mode(used for debuging)
  if (analogRead(A2) > 380)  {
 
   
@@ -77,7 +87,7 @@ if ((analogRead(A2) < 21)) {
 }
 
 
-  
+  //For youtube demo only. Code for I2C Display 
   display.clearDisplay();
   display.setTextSize(1); 
   display.setTextColor(SSD1306_WHITE);
