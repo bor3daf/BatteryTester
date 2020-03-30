@@ -15,8 +15,6 @@ int ledBLUE = 7;
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 
-#define LOGO_HEIGHT   16
-#define LOGO_WIDTH    16
 
 
 void setup() {
