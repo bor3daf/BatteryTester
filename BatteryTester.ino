@@ -1,6 +1,6 @@
 /*
 Nick Sola
-Eltrn-271 Intro to Robotics
+Eltrn-107 Intro to Robotics
 Project 1 - Battery Tester
 */
 
